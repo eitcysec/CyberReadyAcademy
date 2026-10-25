@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Next.js and build output
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Test output
+coverage/
+test-results/
+playwright-report/
+
+# Environment files: never commit real configuration.
+# Only .env.example (placeholders) is tracked.
+.env
+.env.*
+!.env.example
+
+# Secrets and keys that must never be committed
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and OS/editor noise
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/

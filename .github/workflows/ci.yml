@@ -1,0 +1,70 @@
+name: CI
+
+# Runs on pull requests and on pushes to main.
+# Security notes (see docs/security/security-baseline.md):
+#  - Uses `pull_request`, never `pull_request_target`, so code from forks runs
+#    without access to repository secrets.
+#  - No secrets are referenced anywhere in this workflow.
+#  - The token is read-only, and checkout does not persist credentials.
+#  - Third-party actions are pinned to full commit SHAs.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, type-check, test, build, audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      # Non-secret placeholder, identical to .env.example.
+      SITE_URL: http://localhost:3000
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Use pinned npm version
+        run: npm install -g npm@11.21.0
+
+      - name: Install dependencies from lockfile
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: Dependency vulnerability audit
+        # Fails on any reported vulnerability. Findings are triaged and recorded
+        # in docs/security/security-baseline.md, never silenced here.
+        run: npm audit
+
+      - name: Verify registry signatures
+        run: npm audit signatures
