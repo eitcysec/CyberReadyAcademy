@@ -1,0 +1,50 @@
+# captured 2026-10-25T14:34:52Z | node v22.22.2 | npm 11.21.0 | build from 04-build.log
+$ env -u SITE_URL timeout 20 npm start -- -p 3301   (no .env.local present)
+ls: cannot access '.env.local': No such file or directory
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:3301/   (8 s after start)
+HTTP 500 (000 = no connection)
+
+> cyberready-academy@0.1.0 start
+> next start -p 3301
+
+▲ Next.js 16.4.1
+- Local:         http://localhost:3301
+- Network:       http://192.0.2.2:3301
+✓ Ready in 161ms
+✓ Running next.config.ts took 51ms
+Failed to prepare server Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+⨯ Failed to preload entries: Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+Failed to prepare server Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+[timeout/start exit code: 124]

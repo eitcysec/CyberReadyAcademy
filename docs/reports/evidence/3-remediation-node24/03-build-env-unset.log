@@ -1,0 +1,36 @@
+# captured 2026-10-25T14:49:28Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ env -u SITE_URL npm run build
+
+> cyberready-academy@0.1.0 build
+> next build
+
+▲ Next.js 16.4.1 (Turbopack)
+✓ Running next.config.ts took 96ms
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 11.6s
+  Running TypeScript ...
+  Finished TypeScript in 5.7s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/5) ...
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+Error [EnvValidationError]: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (src/lib/env.ts:44:9)
+    at a.s.width [as generateMetadata] (src/lib/env.ts:45:1)
+  42 |     return `${key} ${problem}`;
+  43 |   });
+> 44 |   throw new EnvValidationError(issues);
+     |         ^
+  45 | }
+  46 |
+  47 | let cached: Env | undefined; {
+  issues: [ 'SITE_URL is required but not set' ],
+  digest: '1013793633'
+}
+Export encountered an error on /_not-found/page: /_not-found, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null
+[exit code: 1]
+

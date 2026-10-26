@@ -1,0 +1,78 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261025160232
+Username: DESKTOP-3FF8A02\HP User
+RunAs User: DESKTOP-3FF8A02\HP User
+Configuration Name: 
+Machine: DESKTOP-3FF8A02 (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 18376
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\docs\reports\evidence\4-windows-node24\12-windows-validation.log
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Write-Host "`n=== Windows validation capture ==="
+
+=== Windows validation capture ===
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Get-Date -Format o
+2026-10-25T16:02:32.0538094+00:00
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> node --version
+v24.22.1
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> npm --version
+11.19.1
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> git status --short
+ M .github/workflows/ci.yml
+ M .gitignore
+ M .nvmrc
+ M README.md
+ M docs/adr/001-initial-architecture.md
+ M docs/architecture.md
+ M docs/development-setup.md
+ M docs/reports/CRA-001-report.md
+ M docs/security/security-baseline.md
+ M docs/security/threat-model.md
+ M package-lock.json
+ M package.json
+?? docs/reports/evidence/
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Write-Host "`n=== Full quality check ==="
+
+=== Full quality check ===
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> npm run check
+✓ Generating static pages using 6 workers (5/5) in 547ms
+  Finalizing page optimization ...
+✓ Finalizing page optimization in 22ms
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /contact
+└ ○ /services
+
+
+○  (Static)  prerendered as static content
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Write-Host "`n=== Full dependency audit ==="
+
+=== Full dependency audit ===
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> npm audit
+
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Write-Host "`n=== Production dependency audit ==="
+
+=== Production dependency audit ===
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> npm audit --omit=dev
+
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Write-Host "`n=== Registry signature audit ==="
+
+=== Registry signature audit ===
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> npm audit signatures
+
+PS C:\Users\HP User\Projects\CyberReadyAcademy-LocalReview\patched> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261025160307
+**********************

@@ -1,0 +1,128 @@
+# CI-equivalent run, 2026-10-25T14:17:38Z, node v22.22.2, npm 11.21.0
+$ npm ci
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 429 packages, and audited 430 packages in 10s
+
+found 0 vulnerabilities
+[exit code: 0]
+
+$ npm run format:check
+
+> cyberready-academy@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+[exit code: 0]
+
+$ npm run lint
+
+> cyberready-academy@0.1.0 lint
+> eslint . --max-warnings=0
+
+[exit code: 0]
+
+$ npm run typecheck
+
+> cyberready-academy@0.1.0 typecheck
+> tsc --noEmit
+
+[exit code: 0]
+
+$ npm test
+
+> cyberready-academy@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /tmp/ci
+
+ ✓ src/app/(public)/page.test.tsx (5 tests) 401ms
+ ✓ src/lib/env.test.ts (8 tests) 12ms
+ ✓ src/modules/catalog/catalog.test.ts (3 tests) 7ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  14:18:01
+   Duration  4.47s (environment 68%, setup 13%, tests 11%, transform 4%, worker 3%, import 3%)
+
+Environment  jsdom was created 3 times · 2.70s total, 68% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+[exit code: 0]
+
+$ npm run build
+
+> cyberready-academy@0.1.0 build
+> next build
+
+▲ Next.js 16.4.1 (Turbopack)
+✓ Running next.config.ts took 109ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.4s
+  Running TypeScript ...
+  Finished TypeScript in 6.2s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/5) ...
+  Generating static pages using 1 worker (1/5) 
+  Generating static pages using 1 worker (2/5) 
+  Generating static pages using 1 worker (3/5) 
+✓ Generating static pages using 1 worker (5/5) in 290ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /contact
+└ ○ /services
+
+
+○  (Static)  prerendered as static content
+
+[exit code: 0]
+
+$ npm audit
+found 0 vulnerabilities
+[exit code: 0]
+
+$ npm audit --omit=dev
+found 0 vulnerabilities
+[exit code: 0]
+
+$ npm audit signatures
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://tuf-repo-cdn.sigstore.dev/15.root.json failed, reason: getaddrinfo ENOTFOUND tuf-repo-cdn.sigstore.dev
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: /home/claude/.npm/_logs/2026-10-25T14_18_25_764Z-debug-0.log
+[exit code: 1]
+
+$ npm start -- -p 3200   (background) + curl smoke test
+GET / -> HTTP 200  <title>CyberReady Academy — Cybersecurity awareness training in Liberia</title>
+GET /services -> HTTP 200  <title>Planned courses | CyberReady Academy</title>
+GET /contact -> HTTP 200  <title>Make an inquiry | CyberReady Academy</title>
+GET /does-not-exist -> HTTP 404  <title>Page not found | CyberReady Academy</title>
+h1 elements on /: 1
+X-Powered-By present: 0
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+[server log]
+
+> cyberready-academy@0.1.0 start
+> next start -p 3200
+
+▲ Next.js 16.4.1
+- Local:         http://localhost:3200
+- Network:       http://192.0.2.2:3200
+✓ Ready in 170ms
+✓ Running next.config.ts took 66ms

@@ -1,0 +1,14 @@
+# captured 2026-10-25T14:34:52Z | node v22.22.2 | npm 11.21.0 | build from 04-build.log
+$ actionlint -version
+1.7.12
+installed by downloading from release page
+built with go1.26.1 compiler for linux/amd64
+$ actionlint -verbose .github/workflows/ci.yml
+verbose: Linting .github/workflows/ci.yml
+verbose: Found 0 parse errors in 1 ms for .github/workflows/ci.yml
+verbose: Rule "shellcheck" was disabled: exec: "shellcheck": executable file not found in $PATH
+verbose: Rule "pyflakes" was disabled: exec: "pyflakes": executable file not found in $PATH
+verbose: Found total 0 errors in 2 ms for .github/workflows/ci.yml
+[exit code: 0]
+$ command -v shellcheck
+not found

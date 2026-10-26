@@ -10,10 +10,12 @@ submitted, there is no database, no authentication and no deployment. See
 
 ## Quick start
 
-Requires Node.js 22 (22.12 or newer) and npm 11.21.0 or newer.
+Requires Node.js 24 LTS (24.15.0 or newer; 24.22.1 recommended, pinned in `.nvmrc`) and
+npm 11.19.1 or newer, which is the npm bundled with Node 24.22.x.
 
 ```bash
-npm install -g npm@11.21.0      # once, if `npm --version` is older than 11.21.0
+node --version                  # expect v24.22.1 (minimum v24.15.0)
+npm --version                   # expect 11.19.1 or newer
 npm ci                          # install exactly what package-lock.json specifies
 cp .env.example .env.local      # placeholder values only; no secrets needed
 npm run dev                     # http://localhost:3000

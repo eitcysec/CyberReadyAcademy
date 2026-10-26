@@ -2,19 +2,23 @@
 
 ## Prerequisites
 
-| Tool    | Version                | Why                                                                                       |
-| ------- | ---------------------- | ----------------------------------------------------------------------------------------- |
-| Node.js | 22.x, at least 22.12.0 | Active LTS line. Pinned in `.nvmrc` (22.22.2) and enforced by `engines` in `package.json` |
-| npm     | 11.21.0 or newer       | npm 10 crashes while resolving this dependency tree (see ADR 001)                         |
-| Git     | any recent version     | Version control                                                                           |
+| Tool    | Version                                   | Why                                                                                                                         |
+| ------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Node.js | 24 LTS: **24.22.1** recommended, ≥24.15.0 | `.nvmrc` pins the exact version CI uses. `engines` allows `^24.15.0`, the lowest version the lockfile's dependencies accept |
+| npm     | ≥11.19.1 (bundled with Node 24.22.x)      | Older npm 11 releases ignore the `allowScripts` install-script policy; npm 10 crashes on this tree                          |
+| Git     | any recent version                        | Version control                                                                                                             |
+
+The project supports Node 24 LTS only, pinned to 24.22.1. Node 24 releases older than
+24.15.0 are not supported because the pinned `jsdom` toolchain requires Node
+`^22.22.2 || ^24.15.0 || >=26`. Although that dependency range includes Node 22.22.2,
+project policy deliberately standardises on Node 24 only (see ADR 001, "Toolchain policy").
 
 `.npmrc` sets `engine-strict=true`, so `npm ci` stops with a clear error when the Node or
 npm version is wrong, rather than producing a subtly different install.
 
 ```bash
-nvm use                    # or install Node 22 another way
-npm install -g npm@11.21.0
-node --version && npm --version
+nvm use                    # reads .nvmrc (24.22.1); or install Node 24.22.1 another way
+node --version && npm --version   # v24.22.1 and 11.19.1 or newer
 ```
 
 ## Install
@@ -33,6 +37,25 @@ Install scripts: npm 11 blocks dependency install scripts unless they are approv
 `unrs-resolver`, is explicitly denied because its script only downloads a fallback
 binary that is not needed. Review any new request with `npm install-scripts ls`.
 
+### Windows (PowerShell)
+
+Validated on Windows by the Product Owner on 2026-10-25 with Node.js v24.22.1 and npm 11.19.1:
+`npm run check`, `npm audit`, `npm audit --omit=dev` and `npm audit signatures` passed
+(`docs/reports/evidence/4-windows-node24/12-windows-validation.log`). The Node installation commands and `npm run dev` below are not covered by
+that transcript.
+
+```powershell
+node --version            # must print v24.15.0 or newer; v24.22.1 recommended
+npm --version             # must print 11.19.1 or newer
+# If Node is older, install 24.22.1 with nvm-windows:
+#   nvm install 24.22.1; nvm use 24.22.1
+# or the official Windows installer for v24.22.1 from nodejs.org.
+npm ci
+Copy-Item .env.example .env.local
+npm run check
+npm run dev
+```
+
 ## Configure
 
 ```bash
@@ -48,8 +71,10 @@ secret is needed for anything in CRA-001.
 
 Validation lives in `src/lib/env.ts` and runs:
 
-- at server startup (`src/instrumentation.ts`), where the server refuses to serve
-  requests if configuration is invalid;
+- at server startup (`src/instrumentation.ts`): if configuration is invalid, the server
+  logs the problem and answers **every request with a generic `HTTP 500 Internal Server
+Error`** (no page content, no configuration details; security headers still sent). The
+  process does **not** exit, so a deployment needs a health check;
 - during `npm run build`, which fails with a message such as
   `SITE_URL is required but not set`.
 

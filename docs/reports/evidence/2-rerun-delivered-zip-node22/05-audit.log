@@ -1,0 +1,26 @@
+# captured 2026-10-25T14:33:26Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm audit
+found 0 vulnerabilities
+[exit code: 0]
+
+# captured 2026-10-25T14:33:27Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm audit --omit=dev
+found 0 vulnerabilities
+[exit code: 0]
+
+# captured 2026-10-25T14:33:28Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm audit signatures
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://tuf-repo-cdn.sigstore.dev/15.root.json failed, reason: getaddrinfo ENOTFOUND tuf-repo-cdn.sigstore.dev
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: /home/claude/.npm/_logs/2026-10-25T14_33_28_431Z-debug-0.log
+[exit code: 1]
+

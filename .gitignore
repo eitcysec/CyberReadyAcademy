@@ -28,6 +28,8 @@ playwright-report/
 # Logs and OS/editor noise
 npm-debug.log*
 *.log
+# Review evidence is deliberately tracked (CRA-001 CTO review, finding 1).
+!docs/reports/evidence/**/*.log
 .DS_Store
 Thumbs.db
 .vscode/*

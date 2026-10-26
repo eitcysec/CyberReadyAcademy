@@ -1,0 +1,82 @@
+# captured 2026-10-25T14:55:51Z | node v24.22.1 | npm 11.19.1 | final patched tree, after all doc edits
+$ npm ci
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 429 packages, and audited 430 packages in 12s
+
+found 0 vulnerabilities
+[exit code: 0]
+$ SITE_URL=http://localhost:3000 npm run check
+
+> cyberready-academy@0.1.0 check
+> npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build
+
+
+> cyberready-academy@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> cyberready-academy@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+> cyberready-academy@0.1.0 typecheck
+> tsc --noEmit
+
+
+> cyberready-academy@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /tmp/patched/cyberready-academy
+
+ ✓ src/app/(public)/page.test.tsx (5 tests) 314ms
+ ✓ src/lib/env.test.ts (8 tests) 13ms
+ ✓ src/modules/catalog/catalog.test.ts (3 tests) 6ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  14:56:12
+   Duration  3.89s (environment 69%, setup 11%, tests 10%, worker 4%, transform 4%, import 3%)
+
+Environment  jsdom was created 3 times · 2.33s total, 69% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+> cyberready-academy@0.1.0 build
+> next build
+
+▲ Next.js 16.4.1 (Turbopack)
+✓ Running next.config.ts took 73ms
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 11.5s
+  Running TypeScript ...
+  Finished TypeScript in 6.4s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/5) ...
+  Generating static pages using 1 worker (1/5) 
+  Generating static pages using 1 worker (2/5) 
+  Generating static pages using 1 worker (3/5) 
+✓ Generating static pages using 1 worker (5/5) in 279ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /contact
+└ ○ /services
+
+
+○  (Static)  prerendered as static content
+
+[exit code: 0]
+$ /tmp/actionlint .github/workflows/ci.yml
+[exit code: 0]
+$ npm audit
+found 0 vulnerabilities
+[exit code: 0]

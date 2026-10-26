@@ -1,0 +1,8 @@
+$ actionlint -version
+1.7.12
+$ actionlint .github/workflows/ci.yml
+[exit code: 0, no findings]
+Note: shellcheck was not installed in the sandbox, so `run:` scripts were not shell-linted.
+
+$ python3 -c "import yaml; yaml.safe_load(open('.github/workflows/ci.yml'))"
+YAML OK; jobs: ['quality'] steps: 11

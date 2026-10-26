@@ -1,0 +1,14 @@
+# captured 2026-10-25T14:48:52Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm ci --foreground-scripts
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 429 packages, and audited 430 packages in 20s
+
+found 0 vulnerabilities
+[exit code: 0]
+
+# captured 2026-10-25T14:49:12Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm install-scripts ls
+No packages with unreviewed install scripts.
+[exit code: 0]
+

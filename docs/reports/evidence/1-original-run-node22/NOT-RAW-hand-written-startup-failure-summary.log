@@ -1,0 +1,21 @@
+# Startup with SITE_URL unset (.env.local removed), 2026-10-25
+$ npm start -- -p 3101          (run under `timeout 25`)
+> cyberready-academy@0.1.0 start
+> next start -p 3101
+▲ Next.js 16.4.1
+- Local:         http://localhost:3101
+✓ Ready in 194ms
+✓ Running next.config.ts took 58ms
+Failed to prepare server Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+  issues: [ 'SITE_URL is required but not set' ]
+[timeout exit code: 124 — the process stayed alive]
+$ curl http://localhost:3101/
+GET / after failed start: 000   (connection refused — no requests served)
+
+# Build with SITE_URL unset
+$ npm run build
+Error [EnvValidationError] ... issues: [ 'SITE_URL is required but not set' ]
+Export encountered an error on /_not-found/page: /_not-found, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

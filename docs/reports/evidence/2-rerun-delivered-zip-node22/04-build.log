@@ -1,0 +1,33 @@
+# captured 2026-10-25T14:33:21Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ SITE_URL=http://localhost:3000 npm run build
+
+> cyberready-academy@0.1.0 build
+> next build
+
+▲ Next.js 16.4.1 (Turbopack)
+✓ Running next.config.ts took 70ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 296ms
+  Running TypeScript ...
+  Finished TypeScript in 3.7s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/5) ...
+  Generating static pages using 1 worker (1/5) 
+  Generating static pages using 1 worker (2/5) 
+  Generating static pages using 1 worker (3/5) 
+✓ Generating static pages using 1 worker (5/5) in 301ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /contact
+└ ○ /services
+
+
+○  (Static)  prerendered as static content
+
+[exit code: 0]
+

@@ -40,8 +40,10 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Use pinned npm version
-        run: npm install -g npm@11.21.0
+      - name: Show toolchain versions
+        # npm is the version bundled with the Node release in .nvmrc;
+        # package.json "engines" (engine-strict) rejects anything older.
+        run: node --version && npm --version
 
       - name: Install dependencies from lockfile
         run: npm ci

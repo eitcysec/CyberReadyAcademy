@@ -1,0 +1,50 @@
+# captured 2026-10-25T14:49:13Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm run format:check
+
+> cyberready-academy@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+[exit code: 0]
+
+# captured 2026-10-25T14:49:15Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm run lint
+
+> cyberready-academy@0.1.0 lint
+> eslint . --max-warnings=0
+
+[exit code: 0]
+
+# captured 2026-10-25T14:49:18Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm run typecheck
+
+> cyberready-academy@0.1.0 typecheck
+> tsc --noEmit
+
+[exit code: 0]
+
+# captured 2026-10-25T14:49:23Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm test
+
+> cyberready-academy@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /tmp/v/p
+
+ ✓ src/app/(public)/page.test.tsx (5 tests) 368ms
+ ✓ src/lib/env.test.ts (8 tests) 13ms
+ ✓ src/modules/catalog/catalog.test.ts (3 tests) 7ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  14:49:23
+   Duration  4.18s (environment 70%, tests 11%, setup 10%, transform 4%, worker 4%, import 3%)
+
+Environment  jsdom was created 3 times · 2.54s total, 70% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+[exit code: 0]
+

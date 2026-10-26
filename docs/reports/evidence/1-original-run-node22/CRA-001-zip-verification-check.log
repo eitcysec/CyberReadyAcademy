@@ -1,0 +1,67 @@
+
+> cyberready-academy@0.1.0 check
+> npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build
+
+
+> cyberready-academy@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> cyberready-academy@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+> cyberready-academy@0.1.0 typecheck
+> tsc --noEmit
+
+
+> cyberready-academy@0.1.0 test
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.3 [39m[90m/tmp/verify/cyberready-academy[39m
+
+ [32m✓[39m src/app/(public)/page.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 407[2mms[22m[39m
+ [32m✓[39m src/lib/env.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m src/modules/catalog/catalog.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m16 passed[39m[22m[90m (16)[39m
+[2m   Start at [22m 14:21:50
+[2m   Duration [22m 4.60s[2m (environment 67%, setup 13%, tests 10%, transform 4%, worker 3%, import 2%)[22m
+
+[2mEnvironment [22m [33mjsdom was created 3 times[39m[2m · 2.81s total, 67% of tracked time[22m
+[2m            [22m [2mcreate it once per worker with [22m[33mpool: 'vmThreads'[39m[2m (keeps per-file isolation) or [22m[33misolate: false[39m[2m (shares it across files)[22m
+[2m            [22m [2mlearn more: https://vitest.dev/guide/improving-performance#test-environments[22m
+
+
+> cyberready-academy@0.1.0 build
+> next build
+
+▲ Next.js 16.4.1 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 76ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.3s
+  Running TypeScript ...
+  Finished TypeScript in 6.3s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/5) ...
+  Generating static pages using 1 worker (1/5) 
+  Generating static pages using 1 worker (2/5) 
+  Generating static pages using 1 worker (3/5) 
+✓ Generating static pages using 1 worker (5/5) in 335ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /contact
+└ ○ /services
+
+
+○  (Static)  prerendered as static content
+

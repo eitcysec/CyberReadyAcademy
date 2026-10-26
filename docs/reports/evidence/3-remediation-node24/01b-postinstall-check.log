@@ -1,0 +1,4 @@
+# captured 2026-10-25T14:49:13Z
+$ grep -c "node postinstall.js" 01-npm-ci.log   # 0 = the denied unrs-resolver postinstall did not run
+0
+[grep exit code: 1 (1 = no matches)]

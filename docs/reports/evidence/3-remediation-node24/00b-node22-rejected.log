@@ -1,0 +1,11 @@
+# captured 2026-10-25T14:48:51Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/v/p0
+$ npm ci   # PATCHED tree on Node 22.22.2 / npm 11.21.0 (expected: EBADENGINE)
+npm error code EBADENGINE
+npm error engine Unsupported engine
+npm error engine Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Required: {"node":"^24.15.0","npm":">=11.19.1"}
+npm error notsup Actual:   {"node":"v22.22.2","npm":"11.21.0"}
+npm error A complete log of this run can be found in: /home/claude/.npm/_logs/2026-10-25T14_48_51_382Z-debug-0.log
+[exit code: 1]
+

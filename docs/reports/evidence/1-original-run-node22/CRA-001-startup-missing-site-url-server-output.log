@@ -1,0 +1,23 @@
+
+> cyberready-academy@0.1.0 start
+> next start -p 3101
+
+▲ Next.js 16.4.1
+- Local:         http://localhost:3101
+- Network:       http://192.0.2.2:3101
+✓ Ready in 194ms
+✓ Running next.config.ts took 58ms
+Failed to prepare server Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}
+⨯ Failed to preload entries: Error [EnvValidationError]: An error occurred while loading instrumentation hook: Invalid or missing environment configuration:
+  - SITE_URL is required but not set
+See .env.example and docs/development-setup.md.
+    at <unknown> (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:197)
+    at Module.register (.next/server/chunks/src_instrumentation_ts_07j_8w1ivtswj._.js:57:345) {
+  issues: [ 'SITE_URL is required but not set' ]
+}

@@ -9,7 +9,7 @@ monolith**. It runs as one Node.js process, has no database and makes no outboun
 calls. All four current routes are prerendered as static HTML at build time.
 
 ```
-Browser ──HTTPS (at deploy)──▶ Next.js server (Node 22)
+Browser ──HTTPS (at deploy)──▶ Next.js server (Node 24 LTS)
                                  ├─ src/app/(public)   public website (static pages)
                                  ├─ src/modules/       business modules (catalog only, static data)
                                  └─ src/lib/           cross-cutting helpers (env validation)
@@ -81,4 +81,4 @@ None. See ADR 001 §Database for the strategy and integration boundary.
 
 ## Deployment
 
-None. The build output works with any Node 22 host. Hosting choice is deferred (roadmap).
+None. The build output needs a Node 24 host (≥24.15.0; 24.22.1 pinned). Hosting choice is deferred (roadmap).

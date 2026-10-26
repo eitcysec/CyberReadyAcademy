@@ -1,0 +1,33 @@
+# captured 2026-10-25T14:51:13Z | patched tree with engines.npm temporarily lowered to >=11.9.0 IN THIS SCRATCH COPY ONLY, to observe each npm's behaviour
+===== node v24.22.1 npm 11.9.0
+$ npm ci --foreground-scripts | grep -E "unrs-resolver|postinstall|added|audited"
+> unrs-resolver@1.12.2 postinstall
+> node postinstall.js
+added 431 packages, and audited 432 packages in 15s
+[npm ci exit code: 0]
+$ npm install-scripts ls
+Unknown command: "install-scripts"
+
+
+Did you mean this?
+  npm install-ci-test # Install a project with a clean slate and run tests
+To see a list of supported npm commands, run:
+  npm help
+[exit code: 1]
+
+===== node v24.22.1 npm 11.19.1
+$ npm ci --foreground-scripts | grep -E "unrs-resolver|postinstall|added|audited"
+added 429 packages, and audited 430 packages in 15s
+[npm ci exit code: 0]
+$ npm install-scripts ls
+No packages with unreviewed install scripts.
+[exit code: 0]
+
+===== node v24.22.1 npm 11.21.0
+$ npm ci --foreground-scripts | grep -E "unrs-resolver|postinstall|added|audited"
+added 429 packages, and audited 430 packages in 16s
+[npm ci exit code: 0]
+$ npm install-scripts ls
+No packages with unreviewed install scripts.
+[exit code: 0]
+

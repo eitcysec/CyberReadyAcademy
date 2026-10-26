@@ -1,0 +1,47 @@
+# captured 2026-10-25T14:51:05Z | node v24.22.1 | npm 11.19.1 | build from 04-build.log
+$ SITE_URL=http://localhost:3000 npm start -- -p 3400  (background; server output at end)
+$ curl -s -o body -w 'HTTP %{http_code}' http://localhost:3400/ ; grep -o '<title>[^<]*</title>' body
+HTTP 200
+<title>CyberReady Academy — Cybersecurity awareness training in Liberia</title>
+$ curl -s -o body -w 'HTTP %{http_code}' http://localhost:3400/services ; grep -o '<title>[^<]*</title>' body
+HTTP 200
+<title>Planned courses | CyberReady Academy</title>
+$ curl -s -o body -w 'HTTP %{http_code}' http://localhost:3400/contact ; grep -o '<title>[^<]*</title>' body
+HTTP 200
+<title>Make an inquiry | CyberReady Academy</title>
+$ curl -s -o body -w 'HTTP %{http_code}' http://localhost:3400/does-not-exist ; grep -o '<title>[^<]*</title>' body
+HTTP 404
+<title>Page not found | CyberReady Academy</title>
+$ curl -s http://localhost:3400/ | grep -o "<h1" | wc -l
+1
+$ curl -sI http://localhost:3400/
+HTTP/1.1 200 OK
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+Vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+x-nextjs-cache: HIT
+x-nextjs-prerender: 1
+x-nextjs-prerender: 1
+x-nextjs-stale-time: 300
+Cache-Control: s-maxage=31536000
+ETag: "17bf2dyzsuc6j"
+Content-Type: text/html; charset=utf-8
+Content-Length: 15791
+Date: Sun, 25 Oct 2026 14:51:06 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[server stopped: kill 3372]
+--- server output:
+
+> cyberready-academy@0.1.0 start
+> next start -p 3400
+
+▲ Next.js 16.4.1
+- Local:         http://localhost:3400
+- Network:       http://192.0.2.2:3400
+✓ Ready in 223ms
+✓ Running next.config.ts took 51ms

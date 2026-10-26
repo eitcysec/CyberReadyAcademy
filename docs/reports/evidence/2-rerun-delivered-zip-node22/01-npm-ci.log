@@ -1,0 +1,10 @@
+# captured 2026-10-25T14:32:24Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm ci
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 429 packages, and audited 430 packages in 22s
+
+found 0 vulnerabilities
+[exit code: 0]
+

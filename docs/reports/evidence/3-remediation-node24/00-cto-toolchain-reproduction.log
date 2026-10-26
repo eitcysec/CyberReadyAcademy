@@ -1,0 +1,22 @@
+# captured 2026-10-25T14:48:49Z | node v24.14.0 | npm 11.9.0 | cwd /tmp/v/d/cyberready-academy
+$ npm ci   # delivered ZIP, unmodified
+npm error code EBADENGINE
+npm error engine Unsupported engine
+npm error engine Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Required: {"node":">=22.12.0 <23","npm":">=11.21.0"}
+npm error notsup Actual:   {"node":"v24.14.0","npm":"11.9.0"}
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-25T14_48_49_996Z-debug-0.log
+[exit code: 1]
+
+# captured 2026-10-25T14:48:50Z | node v24.14.0 | npm 11.9.0 | cwd /tmp/v/p0
+$ npm ci   # PATCHED tree on the CTO's current Node 24.14.0 (expected: clear EBADENGINE)
+npm error code EBADENGINE
+npm error engine Unsupported engine
+npm error engine Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Not compatible with your version of node/npm: cyberready-academy@0.1.0
+npm error notsup Required: {"node":"^24.15.0","npm":">=11.19.1"}
+npm error notsup Actual:   {"node":"v24.14.0","npm":"11.9.0"}
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-25T14_48_50_714Z-debug-0.log
+[exit code: 1]
+

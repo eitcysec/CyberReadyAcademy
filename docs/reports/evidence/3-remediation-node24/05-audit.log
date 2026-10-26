@@ -1,0 +1,23 @@
+# captured 2026-10-25T14:49:52Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm audit
+found 0 vulnerabilities
+[exit code: 0]
+
+# captured 2026-10-25T14:49:53Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm audit --omit=dev
+found 0 vulnerabilities
+[exit code: 0]
+
+# captured 2026-10-25T14:49:54Z | node v24.22.1 | npm 11.19.1 | cwd /tmp/v/p
+$ npm audit signatures
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://tuf-repo-cdn.sigstore.dev/15.root.json failed, reason: getaddrinfo ENOTFOUND tuf-repo-cdn.sigstore.dev
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-25T14_49_54_785Z-debug-0.log
+[exit code: 1]
+

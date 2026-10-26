@@ -1,0 +1,54 @@
+# captured 2026-10-25T14:32:46Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm run format:check
+
+> cyberready-academy@0.1.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+[exit code: 0]
+
+# captured 2026-10-25T14:32:48Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm run lint
+
+> cyberready-academy@0.1.0 lint
+> eslint . --max-warnings=0
+
+[exit code: 0]
+
+# captured 2026-10-25T14:32:52Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm run typecheck
+
+> cyberready-academy@0.1.0 typecheck
+> tsc --noEmit
+
+[exit code: 0]
+
+# captured 2026-10-25T14:32:57Z | node v22.22.2 | npm 11.21.0 | cwd /tmp/ev/cyberready-academy
+# source: delivered ZIP sha256 af4ed0a30b5a4782…
+$ npm test
+
+> cyberready-academy@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /tmp/ev/cyberready-academy
+
+ ✓ src/app/(public)/page.test.tsx (5 tests) 365ms
+ ✓ src/lib/env.test.ts (8 tests) 14ms
+ ✓ src/modules/catalog/catalog.test.ts (3 tests) 6ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  14:32:58
+   Duration  4.18s (environment 67%, setup 13%, tests 10%, transform 4%, worker 3%, import 3%)
+
+Environment  jsdom was created 3 times · 2.49s total, 67% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+[exit code: 0]
+
