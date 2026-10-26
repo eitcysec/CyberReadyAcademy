@@ -1,1 +1,5 @@
-docs/reports/evidence/**/*.log -text
+# Store and check out text files with LF line endings.
+* text=auto eol=lf
+
+# Preserve captured evidence logs byte-for-byte.
+docs/reports/evidence/**/*.log -text !eol
